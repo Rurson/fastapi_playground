@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} - Bar{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/bulma.css">
+</head>
+<body>
+<div class="container">
+    <div>{% include "navbar.html" %}</div>
+    <div class="section">
+        {% block content %} some content{% endblock %}
+    </div>
+    <div class="footer"> Some footer</div>
+</div>
+</body>
+</html>

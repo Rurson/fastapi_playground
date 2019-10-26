@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {#    <form class="field" method="post" action="">#}
+    {#        <label class="label" for="name">Name</label>#}
+    {#        <div class="control">#}
+    {#            <input class="input" type="text" id="name" name="name" placeholder="Name of User">#}
+    {#        </div>#}
+    {##}
+    {#        <div class="field is-grouped">#}
+    {#            <div class="control">#}
+    {#                <button class="button is-link">Submit</button>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </form>#}
+   <div>{% include "forms/login.html" %}</div>
+
+    <header class="title">User List:</header>
+    <ul class="list column">
+        {% for i in users %}
+            <li class="list-item">  {{ i.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
