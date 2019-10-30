@@ -38,5 +38,3 @@ async def user_post(request: Request, username: str = Form(...), password: str =
     db["users"].append(User(name=username, password=password))
     return templates.TemplateResponse("users.html", context={"request": request, "users": db["users"]})
 
-if __name__ == "__main__":
-    uvicorn.run(api, host="0.0.0.0", port=8000, reload=True)
