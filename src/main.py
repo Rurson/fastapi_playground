@@ -28,13 +28,17 @@ async def index(request: Request):
     return templates.TemplateResponse("index.html", context={"request": request, "my_list": my_list})
 
 
-@api.get("/users")
+@api.get("/registration")
 async def user_get(request: Request):
-    return templates.TemplateResponse("users.html", context={"request": request, "users": db["users"]})
+    return templates.TemplateResponse("forms/registration.html", context={"request": request})
 
 
-@api.post("/users")
+@api.post("/registration")
 async def user_post(request: Request, username: str = Form(...), password: str = Form(...)):
     db["users"].append(User(name=username, password=password))
     return templates.TemplateResponse("users.html", context={"request": request, "users": db["users"]})
 
+
+@api.get("/users")
+async def user_get(request: Request):
+    return templates.TemplateResponse("users.html", context={"request": request, "users": db["users"]})

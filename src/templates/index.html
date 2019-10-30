@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title"> Index </h1>
+                <p>Some text</p>
 
-    <p class="hero">{% block title %} Index {% endblock %}</p>
-    <div class="section">
-    {% for item in my_list %}
-    <p>Lp. {{ loop.index }} | Item: {{ item }}</p>
-    {% endfor %}
-    </div>
+            </div>
+        </div>
+
+    </section>
+
+
 {% endblock %}

@@ -1,37 +1,32 @@
+{% extends "base.html" %}
+
 {% block content %}
- <form class="form-horizontal" method="post" >
-        <fieldset>
+    <div class="columns is-centered">
 
-            <!-- Form Name -->
-            <legend>Login</legend>
 
-            <!-- Text input-->
-            <div class="field">
-                <label class="label" for="username">Username</label>
-                <div class="control">
-                    <input id="username" name="username" type="text" class="input " required="">
-
+        <form class="form-horizontal column is-half" method="post">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="field">
+                    <label class="label" for="username">Username</label>
+                    <div class="control">
+                        <input id="username" name="username" type="text" class="input " required="">
+                    </div>
                 </div>
-            </div>
-
-            <!-- Password input-->
-            <div class="field">
-                <label class="label" for="password">Password</label>
-                <div class="control">
-                    <input id="password" name="password" type="password" class="input " required="">
-
+                <div class="field">
+                    <label class="label" for="password">Password</label>
+                    <div class="control">
+                        <input id="password" name="password" type="password" class="input " required="">
+                    </div>
                 </div>
-            </div>
-
-            <!-- Button (Double) -->
-            <div class="field">
-                <label class="label" for="doublebutton-0"></label>
-                <div class="control">
-                    <button id="doublebutton-0" name="doublebutton-0" class="button is-success">Confirm</button>
-                    <button id="doublebutton2-0" name="doublebutton2-0" class="button is-danger">Cancel</button>
+                <div class="field">
+                    <label class="label" for="doublebutton-0"></label>
+                    <div class="control">
+                        <button id="doublebutton-0" name="doublebutton-0" class="button is-success">Confirm</button>
+                        <button id="doublebutton2-0" name="doublebutton2-0" class="button is-danger">Cancel</button>
+                    </div>
                 </div>
-            </div>
-
-        </fieldset>
-    </form>
+            </fieldset>
+        </form>
+    </div>
 {% endblock %}

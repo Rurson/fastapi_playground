@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="container ">
-    <div>{% include "components/navbar.html"  %}</div>
-    <div class="section ">
-        {% block content %} some content{% endblock %}
+<section class="section has-background-primary">
+    <div class="container">
+        <div>{% include "components/navbar.html" %}</div>
+        {% block content %} Content placeholder{% endblock %}
     </div>
-    <div class="footer"> Some footer</div>
-</div>
+</section>
+<div class="footer has-background-warning"> Created for fun</div>
 </body>
 </html>
