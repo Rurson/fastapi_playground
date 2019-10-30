@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>{% block title %} - Bar{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/static/bulma.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="container">
-    <div>{% include "components/navbar.html" %}</div>
-    <div class="section">
+<div class="container ">
+    <div>{% include "components/navbar.html"  %}</div>
+    <div class="section ">
         {% block content %} some content{% endblock %}
     </div>
     <div class="footer"> Some footer</div>
