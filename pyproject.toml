@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fastapi_playground"
+version = "0.1.0"
+description = "fastapi playground project"
+authors = ["Juliusz Lewalski <juliusz.lewalski@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.42.0"
+Jinja2 = "^2.10"
+aiofiles = "^0.4.0"
+websockets = "^8.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
