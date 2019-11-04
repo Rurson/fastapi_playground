@@ -9,6 +9,7 @@ from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 from db import db
 from db.entities.user import User
+from db.repositories.user_repository import UserRepository
 
 my_list = ["Hello", "World"]
 api = FastAPI()
@@ -29,6 +30,7 @@ db.bind(
     database=database,
 )
 db.generate_mapping(create_tables=True)
+user_repo = UserRepository()
 
 
 @dataclass
@@ -57,14 +59,10 @@ async def user_get(request: Request):
 
 @api.post("/registration")
 async def user_post(
-    request: Request, username: str = Form(...), password: str = Form(...)
+        request: Request, username: str = Form(...), password: str = Form(...)
 ):
-    db_d["users"].append(User_Entity(name=username, password=password))
-    with db_session():
-        user = User(name=username,password=password)
-        print(user.name)
-        db.commit()
-    users = select(u for u in User)
+    user_repo.create(username, password)
+    users = user_repo.get_all()
     return templates.TemplateResponse(
         "users.html", context={"request": request, "users": users}
     )
@@ -72,6 +70,7 @@ async def user_post(
 
 @api.get("/users")
 async def user_get(request: Request):
+    users = user_repo.get_all()
     return templates.TemplateResponse(
-        "users.html", context={"request": request, "users": db_d["users"]}
+        "users.html", context={"request": request, "users": users}
     )
