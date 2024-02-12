@@ -13,7 +13,7 @@ websockets = "^8.0"
 pony = "^0.7.11"
 psycopg2 = "^2.8"
 uvicorn = "^0.10.3"
-python-multipart = "^0.0.5"
+python-multipart = "^0.0.7"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^18.3-alpha.0", allows-prereleases = true}
